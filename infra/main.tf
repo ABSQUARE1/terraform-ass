@@ -9,7 +9,6 @@ terraform {
     bucket = "absquare-buck"
     key    = "aws/bahms-money/terraform.tfstate"
     region = "us-east-1"
- 
   }
 }
 
