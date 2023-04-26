@@ -6,7 +6,7 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "bahms-money"
+    bucket = "absquare-buck"
     key    = "aws/bahms-money/terraform.tfstate"
     region = "us-east-1"
   }
@@ -117,7 +117,7 @@ resource "aws_security_group" "terraform-sg" {
 resource "aws_instance" "apache-server" {
   ami                    = data.aws_ami.ubuntu.id
   instance_type          = "t2.micro"
-  key_name               = "newkey"
+  key_name               = "myec2"
   vpc_security_group_ids = [aws_security_group.terraform-sg.id]
   user_data              = base64encode(data.template_file.apache_data_script.rendered)
 
@@ -180,7 +180,7 @@ resource "aws_launch_template" "nginx-lt" {
   name                   = "nginx-lt"
   image_id               = data.aws_ami.ubuntu.id
   instance_type          = "t2.micro"
-  key_name               = "newkey"
+  key_name               = "myec2"
   vpc_security_group_ids = [aws_security_group.terraform-sg.id]
   user_data              = base64encode(data.template_file.nginx_data_script.rendered)
 

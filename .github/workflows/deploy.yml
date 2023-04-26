@@ -33,7 +33,7 @@ jobs:
   plan:
     needs: lint
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/feature-a'
+    if: github.ref == 'refs/heads/branch-a'
     steps:
       - name: Code Checkout
         uses: actions/checkout@v2
@@ -70,7 +70,7 @@ jobs:
     needs: lint
     runs-on: ubuntu-latest
     if: |
-      github.ref == 'feature-b' &&
+      github.ref == 'branch-b' &&
       github.event.pull_request.merged == true
     steps:
       - name: Code Checkout
