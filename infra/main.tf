@@ -8,7 +8,7 @@ terraform {
   backend "s3" {
     bucket = "absquare-buck"
     key    = "aws/bahms-money/terraform.tfstate"
-    region = "us-east-1"
+    region = "eu-north-1"
   }
 }
 

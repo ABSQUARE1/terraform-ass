@@ -41,8 +41,8 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
-      - name: Terraform init 
-        run: terraform init -var="key=$AWS_ACCESS_KEY_ID" -var="secret=$AWS_SECRET_ACCESS_KEY"
+      - name: Terraform init
+        run: terraform init
         working-directory: ./infra
       - name: Terraform plan
         working-directory: ./infra
