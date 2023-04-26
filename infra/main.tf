@@ -16,6 +16,10 @@ provider "aws" {
   region = "us-east-1"
 }
 
+
+
+
+
 # Data source declaration for all necessary fetch
 data "aws_vpc" "default_vpc" {
   default = true
