@@ -3,13 +3,13 @@ name: Deploy Terraform ALB-ASG Infra
 on:
   push:
     branches:
-      - feature-a
+      - branch-a
 
   pull_request:
     types: [closed]
     branches:
       - main
-      - feature-b
+      - branch-b
 
 env:
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
